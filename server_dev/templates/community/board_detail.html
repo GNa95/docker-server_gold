@@ -1,0 +1,54 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block content %}
+<section class="py-10 bg-white">
+    <div class="mb-1 p-sm-5">
+        <div class="d-block p-5 gold-2 gold-1">
+            <hr><h2>제목 : {{ board.title }}</h2>
+            <div class="d-grid gap-2">
+                <button type="button" class="gold-4" disabled>작성일자: {{ board.created_dt }}</button>
+            </div>
+            <p class="fs-5 gold-3">{{ board.content }}</p>
+            <hr>
+                <form action="{% url 'community:reply_create' board.id %}" method="POST">
+                    {% csrf_token %}
+                    {% block comments %}
+                    {% for comment in comment_view %}
+                    
+                    <p>{{ comment.author }}</p>
+                    {% comment %} <p>작성자</p> {% endcomment %}
+                    <p>{{ comment.reply }}</p>   
+                    <p class="text-end fs-6">{{ comment.created_dt }}</p>
+                    <hr>
+                    {% endfor %}
+                    {% endblock %}
+                <!-- 오류표시 Start -->
+                {% if form.errors %}
+                <div class="gold-11 alert-danger" role="alert">
+                    {% for field in form %}
+                    {% if field.errors %}
+                <div>
+                    <strong>{{ field.label }}</strong>
+                    {{ field.errors }}
+                </div>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %} 
+                <!-- 오류표시 End -->
+                <div class="form-group py-3">
+                    <textarea name="reply" id="reply" rows="2" class="form-control"></textarea>
+                </div>
+                <div class="d-flex bd-highlight mb-3">
+                    <div class="p-2 bd-highlight">
+                        <button type="button" class="btn btn-danger" onclick="location.href='/comm/board'">돌아가기</button>
+                    </div>
+                    <div class="ms-auto p-2 bd-highlight">
+                        <input type="submit" value="댓글 작성" class="btn btn-danger">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock %}

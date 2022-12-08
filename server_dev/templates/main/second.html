@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Header-->
+<header class="p-5" style="background-color : #FFCC66;">
+    <div class="container px-5 px-lg-5 my-5 mt-10">
+        <div class="text-center text-white"style="width:center; height:center;" >
+            <br><br><br>
+            {% if irdent_dict %}
+                <h1 class="display-4 fw-bolder b-1" >체크 상품을 담으시겠습니까?</h1>
+                <p class="lead fw-normal b-2" style="width:center;">"{{ recipe_nm }}"</p>
+            {% else %}
+                <h1 class="display-4 fw-bolder b-1" >찾으시는 메뉴가 없습니다.</h1>
+                <p class="lead fw-normal b-2" style="width:center;">"{{ recipe_nm }}"</p>
+            {% endif %}
+        </div>
+    </div>
+</header>
+
+<div class="py-4">
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row row-cols-2 row-cols-md-4 row-cols-xl-5 justify-content-center">
+            {% for value in irdent_dict.values %}
+                <div class="card text-center">
+                    <img class="card-body" src="{% get_static_prefix %}images/IMAGE/{{ value.gd_nm }}.jpg" width="230px" height="200px">
+                    {{ value.gd_nm }}
+                    <div class="text-center">
+                        <input type="checkbox" name="selected" id="selected" value="{{ value.gd_num }}" style="width:30px; height:30px; accent-color: #FF5E05;" checked>
+                    </div> 
+                </div>   
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<form id="sendForm" method="POST" action="{% url 'main:third' %}" >
+    <div id="test_view">
+        <input type="hidden" id="irdent" name="irdent" value="{{ irdent_dict }}">
+        <input type="hidden" id="checked" name="checked" value="">
+        <input type="hidden" id="lon", name="lon" value=""> 
+        <input type="hidden" id="lat", name="lat" value="">
+        <input type="hidden" id="recipe" name="recipe" value="{{ recipe_nm }}">
+    </div>
+    <div style="text-align:center; margin:50px;">
+        {% if irdent_dict %}
+            <button type="submit" onclick="getValue()">다음으로</button>
+        {% else %}
+            <button type="button" onclick="location.href='{% url 'main:index' %}'" >이전으로</button>
+        {% endif %}
+    </div>
+</form>
+{% endblock %}
+
+{% block script %}
+<script type='text/javascript'>
+    navigator.geolocation.getCurrentPosition(geoSuccess, getError);
+    function geoSuccess(position) {
+        var lat = position.coords.latitude;
+        var lon = position.coords.longitude;
+        document.getElementById('lon').value = lon
+        document.getElementById('lat').value = lat
+    }
+    function getError() {
+        alert('Geolocation Error')
+    }
+    function getValue()  {
+        // 선택된 목록 가져오기
+        const query = 'input[name="selected"]:checked';
+        const selectedEls = 
+            document.querySelectorAll(query);
+        
+        // 선택된 목록에서 value 찾기
+        let result = '';
+        selectedEls.forEach((el) => {
+          result += el.value + ' ';
+        });
+
+        document.getElementById('checked').value = result
+        document.getElementById('recipe')
+        document.getElementById('sendForm').submit();
+    }
+</script>
+{% endblock %}

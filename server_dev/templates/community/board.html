@@ -1,0 +1,163 @@
+{% extends 'base.html' %}
+{% load community_filter %}
+{% block content %}
+<!-- Mashead header-->
+<section class="py-10 bg-white">
+    <div class="container px-5 px-lg-5 my-5 mt-10">
+        <h3>커뮤니티</h3>
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="btn-group">
+                    <button class="btn btn-danger">
+                        지역선택&nbsp;&nbsp;
+                            <select class="form-select-sm " id="area_filter">
+                                {% for list in all_area %}
+                                    {% if list.ent_area_cd == area_text %}
+                                        <option value="{{ list.ent_area_cd }}" selected>{{ list.ent_area_nm }}</option>
+                                    {% else %}
+                                        <option value="{{ list.ent_area_cd }}">{{ list.ent_area_nm }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select> 
+                    </button>
+                </div>
+            </div>
+            <div class="col-6">
+            <div class="input-group">
+                <input type="text" id="search_kw" class="form-control" value="{{ kw|default_if_none:'' }}" placeholder="검색어를 입력하세요">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="button" id="btn_search"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+            </div>
+
+        </div>
+
+        <div>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th width="15%">번호</th>
+                        <th width="15%">지역</th>
+                        <th width="50%">제목</th>
+                        <th width="10%">작성자</th>
+                        <th width="10%">작성일시</th>
+                    </tr>
+                    </tr>
+                    {% if board_list %}
+                    {% for board in board_list %}
+
+                            <tr>
+                                <td>
+                                    {{ board_list.paginator.count|sub_filter:board_list.start_index|sub_filter:forloop.counter0|add:1 }}
+                                </td>
+                                <td class="action">{{ board.get_area_display }}</td>
+                                <td class="text-start">
+                                    <a href="{% url 'community:board_detail' board.id %}">
+                                        {{ board.title }} 
+                                            <span class=" small ml-2"> 
+                                                {% if board.reply_set.count > 0 %}
+                                                    ( {{ board.reply_set.count }} )
+                                               {% endif %}
+                                            </span>
+                                    </a>  
+                                </td>
+                                <td class="name">{{ board.writer }}</td>
+                                <td class="fs-6">{{ board.created_dt|date:"Y-m-d" }}</td>
+                            </tr>
+
+                    {% endfor %}
+                    {% else %}
+                    
+                    <tr>
+                        <td colspan="3">등록된 게시글이 없습니다.</td>
+                    </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+
+        </div>
+        <!--페이징 처리 시작-->
+        <div class="row g-0">
+            <div class="col-sm-6 col-md-8">
+                <ul class="pagination justify-content-center">
+                    {% if board_list.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" data-page="{{ question_list.previous_page_number }}" href="javascript:void(0)">이전</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link" tabindex="-1" aria-disabled="true" href="javascript:void(0)">이전</a>
+                    </li>
+                    {% endif %}
+                    <!--페이지 리스트-->
+                    {% for page_number in board_list.paginator.page_range %}
+                    {% if page_number >= board_list.number|add:-5 and page_number <= board_list.number|add:5 %}
+                    {% if page_number == board_list.number %}
+                        <li class="page-item active"><a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">
+                            {{ page_number }}</a>
+                        </li>
+                    {% else %}
+                        <li class="page-item"><a class="page-link" data-page="{{ page_number }}" href="javascript:void(0)">
+                            {{ page_number }}</a>
+                        </li>
+                    {% endif %}
+                    {% endif %}
+                    {% endfor %}
+                    <!--다음 페이지-->
+                    {% if board_list.has_next %}
+                    <li class="page-item"><a class="page-link" data-page="{{ question_list.next_page_number }}" href="javascript:void(0)">다음</a>
+                    </li>
+                    {% else %}
+                    <li class="page-item disabled"><a class="page-link" tabindex="-1" aria-disabled="true" href="javascript:void(0)">다음</a>
+                    </li>
+                    {% endif %}
+                </ul>
+                <!--페이징 처리 끝-->
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="d-grid d-md-flex justify-content-md-end">
+                    <button class="btn btn-danger" type="button">
+                        <a href="{% url 'community:board_create' %}" class="text-white">글 작성</a>
+                    </button>
+                </div>
+            </div>
+        </div>    
+    </div>
+    <form id="searchForm" method="get" action="{% url 'community:board_list' %}">
+        <input type="hidden" id="area" name="area" value="{{ area_text }}">
+        <input type="hidden" id="kw" name="kw" value="{{ kw|default_if_none:'' }}">
+        <input type="hidden" id="page" name="page" value="{{ page }}">
+    </form>
+</section>
+{% endblock %}
+
+<!--자바스크립트 블록-->
+{% block script %}
+<script type='text/javascript'>
+const page_elements = document.getElementsByClassName("page-link");
+Array.from(page_elements).forEach(function(element) {
+    element.addEventListener('click', function() {
+        document.getElementById('page').value = this.dataset.page;
+        document.getElementById('searchForm').submit();
+    });
+});
+
+const btn_search = document.getElementById("btn_search");
+btn_search.addEventListener('click', function() {
+    document.getElementById('kw').value = document.getElementById('search_kw').value;
+    document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
+    document.getElementById('searchForm').submit();
+});
+
+
+const area_filter = document.getElementById("area_filter");
+area_filter.addEventListener('change', function() {
+    document.getElementById('kw').value = '';
+    document.getElementById('page').value = 1;  // 검색버튼을 클릭할 경우 1페이지부터 조회한다.
+    document.getElementById('area').value = document.getElementById('area_filter').value;
+    document.getElementById('searchForm').submit(); 
+});
+
+</script>
+{% endblock %}

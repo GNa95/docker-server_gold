@@ -1,0 +1,329 @@
+*** Starting uWSGI 2.0.21 (64bit) on [Mon Oct 31 01:47:06 2022] ***
+compiled with version: 6.3.0 20170516 on 31 October 2022 01:46:03
+os: Linux-5.15.0-1022-azure #27~20.04.1-Ubuntu SMP Mon Oct 17 02:03:50 UTC 2022
+nodename: a95c436da270
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /srv/docker-server
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /srv/docker-server
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /srv/docker-server/apps.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.7 (default, Nov 16 2018, 22:33:19)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55f0a27ed530
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55f0a27ed530 pid: 1 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 7, cores: 2)
+[pid: 7|app: 0|req: 1/1] 185.132.53.101 () {28 vars in 299 bytes} [Mon Oct 31 02:13:17 2022] GET / => generated 16351 bytes in 42 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+Not Found: /GponForm/diag_Form
+[pid: 7|app: 0|req: 2/2] 185.132.53.101 () {40 vars in 578 bytes} [Mon Oct 31 02:13:19 2022] POST /GponForm/diag_Form?images/ => generated 2006 bytes in 10 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 1)
+Mon Oct 31 02:19:53 2022 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+Mon Oct 31 02:19:53 2022 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.21 (64bit) on [Mon Oct 31 02:53:07 2022] ***
+compiled with version: 6.3.0 20170516 on 31 October 2022 02:52:11
+os: Linux-5.15.0-1022-azure #27~20.04.1-Ubuntu SMP Mon Oct 17 02:03:50 UTC 2022
+nodename: e1278938de9e
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /srv/docker-server
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /srv/docker-server
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /srv/docker-server/apps.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.7 (default, Nov 16 2018, 22:33:19)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x5613bed18530
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5613bed18530 pid: 1 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 9, cores: 2)
+[pid: 9|app: 0|req: 1/1] 211.48.113.136 () {42 vars in 780 bytes} [Mon Oct 31 03:07:46 2022] GET / => generated 16351 bytes in 59 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 9|app: 0|req: 2/2] 211.48.113.136 () {42 vars in 731 bytes} [Mon Oct 31 03:07:47 2022] GET /favicon.ico => generated 1973 bytes in 7 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 1)
+[pid: 9|app: 0|req: 3/3] 211.48.113.136 () {42 vars in 790 bytes} [Mon Oct 31 03:07:54 2022] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 9|app: 0|req: 4/4] 211.48.113.136 () {42 vars in 792 bytes} [Mon Oct 31 03:07:54 2022] GET /admin/ => generated 0 bytes in 17 msecs (HTTP/1.1 302) 8 headers in 301 bytes (1 switches on core 0)
+[pid: 9|app: 0|req: 5/5] 211.48.113.136 () {42 vars in 829 bytes} [Mon Oct 31 03:07:54 2022] GET /admin/login/?next=/admin/ => generated 1913 bytes in 52 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 1)
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 220, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 197, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/oracle/base.py", line 232, in get_new_connection
+    **conn_params,
+cx_Oracle.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: "libclntsh.so: cannot open shared object file: No such file or directory". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 377, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/__init__.py", line 72, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 411, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 258, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1138, in execute_sql
+    sql, params = self.as_sql()
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 505, in as_sql
+    where, w_params = self.compile(self.where) if self.where is not None else ("", [])
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 422, in compile
+    sql, params = node.as_sql(self, self.connection)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/where.py", line 81, in as_sql
+    sql, params = compiler.compile(child)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 420, in compile
+    sql, params = vendor_impl(self, self.connection)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/lookups.py", line 128, in as_oracle
+    return lookup.as_sql(compiler, connection)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/lookups.py", line 179, in as_sql
+    rhs_sql = self.get_rhs_op(connection, rhs_sql)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/lookups.py", line 183, in get_rhs_op
+    return connection.operators[self.lookup_name] % rhs
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/oracle/base.py", line 90, in __get__
+    instance.cursor().close()
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 260, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 236, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 220, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 220, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/base/base.py", line 197, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/oracle/base.py", line 232, in get_new_connection
+    **conn_params,
+django.db.utils.DatabaseError: DPI-1047: Cannot locate a 64-bit Oracle Client library: "libclntsh.so: cannot open shared object file: No such file or directory". See https://cx-oracle.readthedocs.io/en/latest/user_guide/installation.html for help
+[pid: 9|app: 0|req: 6/6] 211.48.113.136 () {52 vars in 1146 bytes} [Mon Oct 31 03:26:14 2022] POST /admin/login/?next=/admin/ => generated 281001 bytes in 183 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+Mon Oct 31 03:32:13 2022 - uWSGI worker 1 screams: UAAAAAAH my master disconnected: i will kill myself !!!
+*** Starting uWSGI 2.0.21 (64bit) on [Mon Oct 31 05:22:45 2022] ***
+compiled with version: 6.3.0 20170516 on 31 October 2022 05:21:34
+os: Linux-5.15.0-1022-azure #27~20.04.1-Ubuntu SMP Mon Oct 17 02:03:50 UTC 2022
+nodename: 51d124a35439
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /srv/docker-server
+detected binary path: /usr/local/bin/uwsgi
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /srv/docker-server
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to UNIX address /srv/docker-server/apps.sock fd 3
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+Python version: 3.6.7 (default, Nov 16 2018, 22:33:19)  [GCC 6.3.0 20170516]
+Python main interpreter initialized at 0x55854a8d8530
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 166752 bytes (162 KB) for 2 cores
+*** Operational MODE: threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55854a8d8530 pid: 1 (default app)
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 1)
+spawned uWSGI worker 1 (pid: 10, cores: 2)
+[pid: 10|app: 0|req: 1/1] 14.63.85.94 () {42 vars in 853 bytes} [Mon Oct 31 05:26:41 2022] GET / => generated 16351 bytes in 49 msecs (HTTP/1.1 200) 4 headers in 123 bytes (1 switches on core 0)
+Not Found: /favicon.ico
+[pid: 10|app: 0|req: 2/2] 14.63.85.94 () {42 vars in 804 bytes} [Mon Oct 31 05:26:41 2022] GET /favicon.ico => generated 1973 bytes in 9 msecs (HTTP/1.1 404) 4 headers in 129 bytes (1 switches on core 1)
+[pid: 10|app: 0|req: 3/3] 14.63.85.94 () {42 vars in 863 bytes} [Mon Oct 31 05:34:01 2022] GET /admin => generated 0 bytes in 1 msecs (HTTP/1.1 301) 4 headers in 145 bytes (1 switches on core 0)
+[pid: 10|app: 0|req: 4/4] 14.63.85.94 () {42 vars in 865 bytes} [Mon Oct 31 05:34:01 2022] GET /admin/ => generated 0 bytes in 17 msecs (HTTP/1.1 302) 8 headers in 301 bytes (1 switches on core 0)
+[pid: 10|app: 0|req: 5/5] 14.63.85.94 () {42 vars in 902 bytes} [Mon Oct 31 05:34:01 2022] GET /admin/login/?next=/admin/ => generated 1913 bytes in 57 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 1)
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/oracle/base.py", line 517, in execute
+    return self.cursor.execute(query, self._param_generator(params))
+cx_Oracle.DatabaseError: ORA-00942: table or view does not exist
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 34, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 115, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 113, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/admin/sites.py", line 407, in login
+    return LoginView.as_view(**defaults)(request)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/base.py", line 71, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/debug.py", line 76, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 130, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/decorators.py", line 43, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/decorators/cache.py", line 44, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/views.py", line 63, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/base.py", line 97, in dispatch
+    return handler(request, *args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/views/generic/edit.py", line 141, in post
+    if form.is_valid():
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 180, in is_valid
+    return self.is_bound and not self.errors
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 175, in errors
+    self.full_clean()
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 377, in full_clean
+    self._clean_form()
+  File "/usr/local/lib/python3.6/site-packages/django/forms/forms.py", line 404, in _clean_form
+    cleaned_data = self.clean()
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/forms.py", line 214, in clean
+    self.user_cache = authenticate(self.request, username=username, password=password)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/__init__.py", line 72, in authenticate
+    user = backend.authenticate(request, **credentials)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/backends.py", line 46, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 44, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 82, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 411, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 258, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1261, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1151, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 100, in execute
+    return super().execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 68, in execute
+    return self._execute_with_wrappers(sql, params, many=False, executor=self._execute)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 77, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 90, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 86, in _execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/oracle/base.py", line 517, in execute
+    return self.cursor.execute(query, self._param_generator(params))
+django.db.utils.DatabaseError: ORA-00942: table or view does not exist
+[pid: 10|app: 0|req: 6/6] 14.63.85.94 () {52 vars in 1143 bytes} [Mon Oct 31 05:34:05 2022] POST /admin/login/?next=/admin/ => generated 220023 bytes in 385 msecs (HTTP/1.1 500) 5 headers in 157 bytes (1 switches on core 0)
+[pid: 10|app: 0|req: 7/7] 14.63.85.94 () {42 vars in 902 bytes} [Mon Oct 31 05:34:15 2022] GET /admin/login/?next=/admin/ => generated 1913 bytes in 18 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 1)
+[pid: 10|app: 0|req: 8/8] 14.63.85.94 () {52 vars in 1143 bytes} [Mon Oct 31 05:35:43 2022] POST /admin/login/?next=/admin/ => generated 0 bytes in 293 msecs (HTTP/1.1 302) 10 headers in 595 bytes (1 switches on core 0)
+[pid: 10|app: 0|req: 9/9] 14.63.85.94 () {46 vars in 1000 bytes} [Mon Oct 31 05:35:43 2022] GET /admin/ => generated 3042 bytes in 124 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 1)
+[pid: 10|app: 0|req: 10/10] 14.63.85.94 () {44 vars in 970 bytes} [Mon Oct 31 05:35:50 2022] GET /admin/auth/user/ => generated 6607 bytes in 156 msecs (HTTP/1.1 200) 8 headers in 431 bytes (1 switches on core 0)
+[pid: 10|app: 0|req: 11/11] 14.63.85.94 () {42 vars in 807 bytes} [Mon Oct 31 05:35:50 2022] GET /admin/jsi18n/ => generated 3223 bytes in 71 msecs (HTTP/1.1 200) 5 headers in 159 bytes (2 switches on core 1)
+[pid: 10|app: 0|req: 12/12] 14.63.85.94 () {44 vars in 969 bytes} [Mon Oct 31 05:35:54 2022] GET /admin/ => generated 3042 bytes in 77 msecs (HTTP/1.1 200) 7 headers in 263 bytes (1 switches on core 0)

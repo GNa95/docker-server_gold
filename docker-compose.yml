@@ -10,6 +10,7 @@ services:
           - "80:80"
         volumes:
           - ./server_dev:/srv/docker-server
+          - ./nginx:/etc/nginx/conf.d
           - ./log:/var/log/nginx
         depends_on:
           - django
@@ -27,11 +28,11 @@ services:
           - mysql
     mysql:
         container_name: mysql
-        image: docker-server/mysql
+        image: gombepoo/mysql
         restart: always
         environment:
             MYSQL_ROOT_PASSWORD: 1234
             MYSQL_DATABASE: golddb
         ports:
-          - "1521:1521"
+          - "3306:3306"
 
